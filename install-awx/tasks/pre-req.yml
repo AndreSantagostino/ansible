@@ -11,8 +11,8 @@
     - gnupg2  
     - software-properties-common
     - python3-pip
-    - npm
     - nodejs
+    - npm
     - ansible
     update_cache: yes
 
@@ -31,12 +31,13 @@
   git:
     repo: "{{ git_repo }}"
     dest: /tmp/awx
+    version: 17.1.0
     force: yes
 
-- name: Ensure a directory exists
-  file:
-    path: /tmp/awx/installer
-    state: directory
+# - name: Ensure a directory exists
+#   file:
+#     path: /tmp/awx/installer
+#     state: directory
 
 - name: Create file
   file:
